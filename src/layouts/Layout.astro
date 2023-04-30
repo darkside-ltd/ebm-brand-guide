@@ -1,0 +1,87 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	* {
+		box-sizing: border-box;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	:root {
+		--typeface-primary: 'Atkinson Hyperlegible';
+	}
+	body {
+		font-family: var(--typeface-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	}
+	h1, h2, h3, h4, h5, h6 {
+
+	}
+
+	:root {
+    --greyscale_9Fa0D0: #9FA0D0;
+    --greyscale_8788Af: #8788AF;
+    --greyscale_6F6F8F: #6F6F8F;
+    --greyscale_5C5D76: #5C5D76;
+    --greyscale_3A3A49: #3A3A49;
+
+    --greenF4Fdf0: #F4FDF0;
+    --greenD8F6Cb: #D8F6CB;
+    --green_82Cf6B: #82CF6B;
+    --green_73B45E: #73B45E;
+    --green_629851: #629851;
+    --green_527D44: #527D44;
+    --green_456839: #456839;
+
+    --purple-100: #F4EAFE;
+    --purple-200: #E3CBFC;
+    --purple-300: #D1ADF9;
+    --purple-400: #BE8FF6;
+    --purple-500: #A76EF2;
+    --purple-600: #8C4BEE;
+    --purple-700: #732BEA;
+    --purple-800: #49179B;
+    --purple-900: #3D088C;
+    --purple-1000: #330E6F;
+    --purple-1100: #291152;
+    --purple-1200: #201338;
+
+	--color-primary: var(--purple-700);
+	--color-theme: var(--color-primary);
+	--color-bg-1: var(--purple-800);
+}
+	.background-1 {
+		background: var(--color-bg-1);
+	}
+</style>

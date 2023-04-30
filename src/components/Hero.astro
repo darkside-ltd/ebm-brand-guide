@@ -1,0 +1,16 @@
+---
+import logo from '../assets/logo/Primary.svg';
+
+const { title, intro } = Astro.props;
+---
+
+<div class="hero background-1">
+	<img src={logo.src} width={logo.width} height={logo.height} alt={import.meta.env.BRAND_NAME} />
+</div>
+
+<style>
+.hero{
+	width:100%;
+	padding: 24px;
+}
+</style>

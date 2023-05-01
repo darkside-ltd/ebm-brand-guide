@@ -8,9 +8,23 @@ const { title, intro } = Astro.props;
 	<img src={logo.src} width={logo.width} height={logo.height} alt={import.meta.env.BRAND_NAME} />
 </div>
 
-<style>
+<style lang="scss">
 .hero{
 	width:100%;
 	padding: 24px;
+
+	img{
+		width: 100px
+	}
+}
+
+@media(min-width:420px){
+	.hero{
+		padding: 8rem;
+
+		img {
+			width:200px;
+		}
+	}
 }
 </style>

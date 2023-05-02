@@ -4,8 +4,12 @@ import logo from '../assets/logo/Primary.svg';
 const { title, intro } = Astro.props;
 ---
 
-<div class="hero background-1">
-	<img src={logo.src} width={logo.width} height={logo.height} alt={import.meta.env.BRAND_NAME} />
+<div class="hero bg-3">
+	<!-- <img src={logo.src} width={logo.width} height={logo.height} alt={import.meta.env.BRAND_NAME} /> -->
+	<div class="content-width">
+		<h1>{title}</h1>
+		<p>{intro}</p>
+	</div>
 </div>
 
 <style lang="scss">
@@ -25,6 +29,14 @@ const { title, intro } = Astro.props;
 		img {
 			width:200px;
 		}
+	}
+}
+
+.hero h1 {
+	font-size: 2.4rem;
+	font-weight: 900;
+	@media(min-width:420px) {
+		font-size: 4rem;
 	}
 }
 </style>

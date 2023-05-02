@@ -51,50 +51,74 @@ const { title } = Astro.props;
 	}
 
 	:root {
-    --greyscale_9Fa0D0: #9FA0D0;
-    --greyscale_8788Af: #8788AF;
-    --greyscale_6F6F8F: #6F6F8F;
-    --greyscale_5C5D76: #5C5D76;
-    --greyscale_3A3A49: #3A3A49;
 
-    --greenF4Fdf0: #F4FDF0;
-    --greenD8F6Cb: #D8F6CB;
-    --green_82Cf6B: #82CF6B;
-    --green_73B45E: #73B45E;
-    --green_629851: #629851;
-    --green_527D44: #527D44;
-    --green_456839: #456839;
+	--toyota--red: #FF0022;
 
-    --purple-100: #F4EAFE;
-    --purple-200: #E3CBFC;
-    --purple-300: #D1ADF9;
-    --purple-400: #BE8FF6;
-    --purple-500: #A76EF2;
-    --purple-600: #8C4BEE;
-    --purple-700: #732BEA;
-    --purple-800: #49179B;
-    --purple-900: #3D088C;
-    --purple-1000: #330E6F;
-    --purple-1100: #291152;
-    --purple-1200: #201338;
+	--greyscale--10--ghost: #FAF9FE;
+	--greyscale--20--lavender: #ECECFD;
+	--greyscale--30--lighter--purple: #D1D1F9;
+	--greyscale--40--light--purple: #B6B8EF;
+	--greyscale--50: #9FA0D0;
+	--greyscale--100: #8788AF;
+	--greyscale--200: #6F6F8F;
+	--greyscale--300: #5C5D76;
+	--greyscale--400--independence: #49495D;
+	--greyscale--500: #3A3A49;
 
-	--color-primary: var(--purple-700);
+	--green--10: #F4FDF0;
+	--green--20: #D8F6CB;
+	--green--30--accent--green: #99E880;
+	--green--40: #82CF6B;
+	--green--50: #73B45E;
+	--green--100: #629851;
+	--green--200: #527D44;
+	--green--300: #456839;
+
+	--purple--10: #F4EAFE;
+	--purple--20: #E3CBFC;
+	--purple--30: #D1ADF9;
+	--purple--40: #BE8FF6;
+	--purple--50: #A76EF2;
+	--purple--100: #8C4BEE;
+	--purple--200: #732BEA;
+	--purple--300--primary--purple: #5A16CA;
+	--purple--400: #49179B;
+	--purple--500: #3D088C;
+	--purple--600: #330E6F;
+	--purple--700: #291152;
+	--purple--800: #201338;
+	--purple--900--xiketic: #1A1423;
+
+
+	// Set variables
+	--color-primary: var(--purple--300--primary--purple);
 	--color-theme: var(--color-primary);
-	--color-bg-1: var(--purple-800);
-	--color: #111111;
-	--text-color: var(--greyscale_3A3A49);
+	--color-bg-1: var(--purple--800);
+	--color-bg-2: var(--greyscale--40--light--purple);
+	--color-bg-3: var(--greyscale--20--lavender);
+	--color: var(--purple--900--xiketic);
+	--bg-body: var(--greyscale--10--ghost);
+	--text-color: var(--greyscale--500);
+	}
+	html{
+		background: var(--bg-body);
 	}
 	body{
+		background: var(--bg-body);
 		color: var(--text-color)
 	}
-	.background-1 {
-		background: var(--color-bg-1);
+	.bg-1 {background-color: var(--color-bg-1);}
+	.bg-2 {background-color: var(--color-bg-2);}
+	.bg-3 {background-color: var(--color-bg-3);}
+
+	.content-width{
+		margin:0 auto;
+		max-width:1000px;
 	}
 
 	.content {
 		padding:24px 0 80px;
-		margin:0 auto;
-		max-width:1000px;
+
 		@media(min-width:420px){
 			padding-top:120px;
 			padding-bottom:200px;
@@ -159,11 +183,19 @@ const { title } = Astro.props;
 			table{
 				max-width: 1000px;
 			}
+			tr{
+				display:grid;
+				grid-template-columns: 1fr 1fr;
+				
+			}
+			tbody tr{
+				border-bottom: 2px solid var(--greyscale--20--lavender);
+			}
 			th,td{
-				padding:.5em;
+				padding:12px 16px;
 			}
 			th{
-				background: #EAEDF7
+				background: #EAEDF7;
 			}
 			th+th{
 				background: #FEE9E6

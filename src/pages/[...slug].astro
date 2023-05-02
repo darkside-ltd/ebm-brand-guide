@@ -33,8 +33,8 @@ const {Content} = await dataProp.render();
 <Layout title="Every Body Moves Brand Guide">
 	<main>
 		<SideNav client:visible>
-			<!-- <Hero title="Hi"/> -->
-			<div class="content"><Content /></div>
+			<Hero title={dataProp.data.title} intro={dataProp.data.intro}/>
+			<div class="content content-width"><Content /></div>
 		</SideNav>
 		
 		<!-- <h1>Welcome to <span class="text-gradient">Astro</span></h1>

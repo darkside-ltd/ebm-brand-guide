@@ -2,6 +2,13 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxImportSource": "react"
-  }
+    "jsxImportSource": "react",
+    "strictNullChecks": true,
+    "allowJs": true
+  },
+  "plugins": [
+    {
+      "name": "@astrojs/ts-plugin"
+    },
+  ]
 }

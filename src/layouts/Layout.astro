@@ -16,13 +16,17 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="icon" href="/favicon.ico" sizes="any">
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="theme-color" content="#ffffff">
 		<title>{title}</title>
 	</head>
 	<body class="h-full">
 		<slot />
 	</body>
 </html>
-<style is:global>
+<style is:global lang="scss">
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
@@ -44,9 +48,6 @@ const { title } = Astro.props;
 	}
 	body {
 		font-family: var(--typeface-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	}
-	h1, h2, h3, h4, h5, h6 {
-
 	}
 
 	:root {
@@ -80,8 +81,93 @@ const { title } = Astro.props;
 	--color-primary: var(--purple-700);
 	--color-theme: var(--color-primary);
 	--color-bg-1: var(--purple-800);
-}
+	--color: #111111;
+	--text-color: var(--greyscale_3A3A49);
+	}
+	body{
+		color: var(--text-color)
+	}
 	.background-1 {
 		background: var(--color-bg-1);
+	}
+
+	.content {
+		padding:24px 0 80px;
+		margin:0 auto;
+		max-width:1000px;
+		@media(min-width:420px){
+			padding-top:120px;
+			padding-bottom:200px;
+		}
+
+		p{
+			line-height: 1.68;
+			max-width: 70ch;
+		}
+		*+p{
+			margin-top:24px
+		}
+
+		p, h1, h2, h3, h4, h5, h6, ul, ol, table{
+			padding:0 24px;
+			@media(min-width:420px){
+				font-size:120%
+			}
+		}
+
+		p + *{
+			margin-top:16px;
+		}
+		h1+ *, h2+ *, h3+ *, h4+ *, h5+ *, h6+ *{
+			margin-top:16px;
+		}
+		* + h1, * + h2, * + h3, * + h4, * + h5, * + h6{
+			margin-top:3em;
+		}
+
+		h1, h2, h3, h4, h5, h6{
+			font-weight:700;
+			line-height: 1.2;
+		}
+		h1{font-size:2rem}
+		h2{font-size:2rem}
+		h3{font-size:2rem}
+		h4{font-size:2rem}
+		h5{font-size:2rem}
+		h6{font-size:2rem}
+
+		a{
+			text-decoration: underline;
+		}
+
+		ul{
+			list-style:disc;
+			margin-left:1em;
+		}
+		ul ul {
+			font-size: inherit;
+		}
+
+		li + li, li ul, li ol {
+			margin-top:.5em;
+		}
+
+		.do-not-table{
+			overflow-x:auto;
+			padding: 0 24px;
+
+			table{
+				max-width: 1000px;
+			}
+			th,td{
+				padding:.5em;
+			}
+			th{
+				background: #EAEDF7
+			}
+			th+th{
+				background: #FEE9E6
+			}
+		}
 	}
 </style>

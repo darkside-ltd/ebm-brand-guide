@@ -1,0 +1,78 @@
+---
+title: Accessibility
+---
+
+## The Social Model of Disability
+
+Every Body moves, as a British Paralympic Association programme uses the social model of disability. This model was developed by disabled people and says that disability is caused by barriers within society, rather than by someone's impairment.
+
+For example, a wheelchair user would be unable to enter a building that requires a step to enter. The social model recognises that this is a problem with the building, not the person or their impairment, and would suggest adding a ramp to the entrance.
+
+Barriers can be physical or be caused by people's attitudes based on prejudice or stereotypes, like assuming disabled people can't do certain things.
+
+The social model helps us recognise barriers that make life harder for disabled people. Removing these barriers creates equality.
+
+
+## Language
+
+**Words to use and avoid**
+
+Avoid passive, victim words. Use language that respects disabled people as active individuals with control over their own lives. 
+
+Examples:
+
+<div class="do-not-table">
+
+| Use      | Avoid      |
+| :---     |    :---    |
+| disabled (people)     | people with disabilities, (the) handicapped, (the) disabled       |
+| has [name of condition or impairment]   | afflicted by, suffers from, victim of        |
+| non-disabled | able-bodied |
+| wheelchair user | confined to a wheelchair, wheelchair-bound |
+| with a learning disability (singular) with learning disabilities (plural) | mentally handicapped, mentally defective, retarded, subnormal |
+| disabled person | cripple, invalid |
+| person with cerebral palsy | spastic |
+| person with a mental health condition | mental patient, insane, mad |
+| deaf, user of British Sign Language (BSL), person with a hearing impairment | deaf and dumb; deaf mute |
+| people with visual impairments; blind people; blind and partially sighted people, visually impaired people | the blind |
+| person with epilepsy, diabetes, depression or someone who has epilepsy, diabetes, depression | an epileptic, diabetic, depressive |
+| someone with restricted growth or short stature | dwarf; midget |
+| Seizures | fits, spells, attacks |
+
+</div>
+
+## General Guidance
+
+
+- Use a minimum of size 12 font.
+- Avoid cursive fonts.
+- Avoid using italics.
+- Align text to the left.
+- Only use underline for link text, avoid using elsewhere - including for headings.
+- For headings and other emphasis, use bold.
+- Avoid using all uppercase text - particularly for large bodies of text.
+- Use plain language and an active voice. Write in short sentences and avoid metaphorical language. You can use a readability tool like [Hemingway App](https://protect-eu.mimecast.com/s/z_qICL9wqfPO5DCBgp-V?domain=hemingwayapp.com/) to help you.
+- Ensure high colour contrast between text and background. You can use [WebAIM checker](https://protect-eu.mimecast.com/s/Uq-8CM8xrI58GyFkS7_P?domain=webaim.org/) to check that colour contrast is sufficient.
+- Include descriptive link text. Avoid using a copy and pasted URL and phrases like ‘click here’ or ‘read more’ as the link text. Here’s more helpful tips to write [accessible link text](https://protect-eu.mimecast.com/s/U4H-CXD2JTnN3PtQh-e-?domain=bighack.org/).
+- Use appropriate [heading structure and in a logical order](https://business.scope.org.uk/article/how-to-write-better-link-text-for-accessibility).
+- Ensure all videos have subtitles. With subtitles on a solid colour background, not over the moving background of a video.
+- Ensure pictures contain alt-text descriptions – including images of graphs and charts. For images with copy, ensure that the alt-text contains the same words as in the image.
+    - However, decorative images on websites or documents shouldn’t have alt-text, instead, they should be marked as decorative or have ‘null’ code (alt=””) in the CMS.
+    - Here are some tips on how to [write better alt-text descriptions for accessibility](https://business.scope.org.uk/article/how-to-write-better-alt-text-descriptions-for-accessibility) and how to avoid these common alt-text mistakes.
+- Provide plain text versions of PDFs and PowerPoint Presentations.
+
+## Accessibility for Spreadsheets
+
+Tops tips for Excel and other spreadsheets.
+
+
+- Have text in Cell A1
+- Avoid blank cells, columns, and rows. If there is no need for a blank cell, column, or row, consider deleting it. If you cannot avoid a blank cell, column, or row, enter text explaining that it is blank. For example, type N/A or Intentionally Blank.
+- Avoid splitting or merging cells
+- Make use of Excel’s built-in [Accessibility Checker](https://support.microsoft.com/en-us/office/improve-accessibility-with-the-accessibility-checker-a16f6de0-2f39-4a2b-8bd8-5ad801426c7f#PickTab=Windows)
+  
+For further useful guidance on accessibility within Excel please see the links below:
+
+- [Make your Excel documents accessible](https://support.microsoft.com/en-us/office/make-your-excel-documents-accessible-to-people-with-disabilities-6cc05fc5-1314-48b5-8eb3-683e49b3e593)
+- [How to make accessible Excel spreadsheets](https://protect-eu.mimecast.com/s/X5tkCR6Dzurl8DIQuLTk?domain=gov.wales)
+- [Excel tips](https://protect-eu.mimecast.com/s/azeLCVOKEUlK1nTEbHRm?domain=accessibility.psu.edu/)

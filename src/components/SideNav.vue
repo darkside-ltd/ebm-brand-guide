@@ -1,4 +1,70 @@
 
+<script setup>
+import { ref } from 'vue'
+import {
+  Dialog,
+  DialogPanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  TransitionChild,
+  TransitionRoot,
+} from '@headlessui/vue'
+import {
+  Bars3Icon,
+  BellIcon,
+  CalendarIcon,
+  ChartPieIcon,
+  CalendarDaysIcon,
+  DocumentDuplicateIcon,
+  FolderIcon,
+  HomeIcon,
+  UsersIcon,
+  XMarkIcon,
+} from '@heroicons/vue/24/outline'
+import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
+
+const navigation = [
+  { name: 'Intro', href: '/', icon: null, current: false },
+  { name: 'Strategy', href: '/strategy', icon: null, current: false },
+  { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
+  { name: 'Typography', href: '/typography', icon: null, current: false },
+  { name: 'Logo', href: '/logo', icon: null, current: false },
+  { name: 'Colour', href: '/colour', icon: null, current: false },
+  { name: 'Imagery', href: '/imagery', icon: null, current: false },
+  { name: 'Icons', href: '/icons', icon: null, current: false },
+  { name: 'Patterns', href: '/patterns', icon: null, current: false },
+  
+//   { name: 'Corporate Social Responsibility', href: '#', icon: null, current: false },
+]
+// const navigation = [
+//   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
+//   { name: 'Team', href: '#', icon: UsersIcon, current: false },
+//   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
+//   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
+//   { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
+//   { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+// ]
+const teams = [
+  { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
+  { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
+  { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
+]
+const userNavigation = [
+  { name: 'Your profile', href: '#' },
+  { name: 'Sign out', href: '#' },
+]
+
+
+import logoAsset from '../assets/logo/Primary.svg';
+
+const logo = { src: logoAsset.src, alt: 'Every Body Moves' }
+
+const sidebarOpen = ref(false)
+
+</script>
+
 <template>
   <div>
     <TransitionRoot as="template" :show="sidebarOpen">
@@ -23,6 +89,7 @@
                 <div class="flex h-16 shrink-0 items-center">
                   <img class="h-8 w-auto" :src="logo.src" :alt="logo.alt" />
                 </div>
+                
                 <nav class="flex flex-1 flex-col">
                   <ul role="list" class="flex flex-1 flex-col gap-y-7">
                     <li>
@@ -59,7 +126,7 @@
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
       <div class="flex grow flex-col gap-y-5 overflow-y-auto background-1 px-6 pb-4">
-        <div class="flex h-40 shrink-0 items-center">
+        <div class="flex flex-col py-6 shrink-0 items-start justify-center">
           <img class="h-24 w-auto" :src="logo.src" :alt="logo.alt" />
         </div>
         <nav class="flex flex-1 flex-col">
@@ -85,6 +152,12 @@
                 </li>
               </ul>
             </li> -->
+            <li class="mt-auto">
+              <a href="#" class="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-indigo-700 hover:text-white">
+                <CalendarDaysIcon class="h-6 w-6 shrink-0 text-indigo-200 group-hover:text-white" aria-hidden="true" />
+                1st May 2023
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -145,63 +218,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import {
-  Dialog,
-  DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  TransitionChild,
-  TransitionRoot,
-} from '@headlessui/vue'
-import {
-  Bars3Icon,
-  BellIcon,
-  CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline'
-import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
-
-const navigation = [
-  { name: 'Intro', href: '#', icon: null, current: false },
-  { name: 'Strategy', href: '#', icon: null, current: true },
-  { name: 'Logo', href: '#', icon: null, current: false },
-  { name: 'Colours', href: '#', icon: null, current: false },
-  { name: 'Typography', href: '#', icon: null, current: false },
-  { name: 'Accessibility', href: '#', icon: null, current: false },
-]
-// const navigation = [
-//   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-//   { name: 'Team', href: '#', icon: UsersIcon, current: false },
-//   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-//   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-//   { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-//   { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
-// ]
-const teams = [
-  { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
-]
-const userNavigation = [
-  { name: 'Your profile', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
-
-
-import logoAsset from '../assets/logo/Primary.svg';
-
-const logo = { src: logoAsset.src, alt: 'Every Body Moves' }
-
-const sidebarOpen = ref(false)
-</script>

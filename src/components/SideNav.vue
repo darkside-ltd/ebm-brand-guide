@@ -1,5 +1,6 @@
 
 <script setup>
+import { getCollection } from 'astro:content';
 import { ref } from 'vue'
 import {
   Dialog,
@@ -25,27 +26,37 @@ import {
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 
-const navigation = [
-  { name: 'Intro', href: '/', icon: null, current: false },
-  { name: 'Strategy', href: '/strategy', icon: null, current: false },
-  { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
-  { name: 'Typography', href: '/typography', icon: null, current: false },
-  { name: 'Logo', href: '/logo', icon: null, current: false },
-  { name: 'Colour', href: '/colour', icon: null, current: false },
-  { name: 'Imagery', href: '/imagery', icon: null, current: false },
-  { name: 'Icons', href: '/icons', icon: null, current: false },
-  { name: 'Patterns', href: '/patterns', icon: null, current: false },
-  
-//   { name: 'Corporate Social Responsibility', href: '#', icon: null, current: false },
-]
+    const allPosts = await getCollection("data");
+    const navigation = allPosts.map((post, i) => {
+
+    const title = post.data.title
+    let href = post.data.title.toLowerCase()
+    if(href === "intro") href=""
+    href = "/" + href
+    console.log({href})
+    return {
+      name: title,
+      href: href,
+      icon: null,
+      current: false
+    }
+
+    });
+
 // const navigation = [
-//   { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-//   { name: 'Team', href: '#', icon: UsersIcon, current: false },
-//   { name: 'Projects', href: '#', icon: FolderIcon, current: false },
-//   { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
-//   { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-//   { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+//   { name: 'Intro', href: '/', icon: null, current: false },
+//   { name: 'Strategy', href: '/strategy', icon: null, current: false },
+//   { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
+//   { name: 'Typography', href: '/typography', icon: null, current: false },
+//   { name: 'Logo', href: '/logo', icon: null, current: false },
+//   { name: 'Colour', href: '/colour', icon: null, current: false },
+//   { name: 'Imagery', href: '/imagery', icon: null, current: false },
+//   { name: 'Icons', href: '/icons', icon: null, current: false },
+//   { name: 'Patterns', href: '/patterns', icon: null, current: false },
 // ]
+
+
+
 const teams = [
   { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
   { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },

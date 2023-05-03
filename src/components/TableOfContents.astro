@@ -3,13 +3,13 @@ import TableOfContentsHeading from '../components/TableOfContentsHeading.astro'
 const { headings } = Astro.props;
 
 function buildToc(headings) {
-    console.log({headings})
+    // console.log({headings})
 
     const toc = [];
     const parentHeadings = new Map();
 
     headings.forEach((h, index) => {
-      console.log({index})
+      // console.log({index})
       const heading = { ...h, subheadings: [], index };
       heading.index = index + 1;
       parentHeadings.set(heading.depth, heading);

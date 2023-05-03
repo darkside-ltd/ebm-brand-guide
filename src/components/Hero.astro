@@ -10,7 +10,7 @@ const { title, intro, headings } = Astro.props;
 		<h1>{title}</h1>
 		<div class="grid lg:grid-cols-2 gap-6 mt-4 lg:mt-8">
 			<p>{intro}</p>
-			<TableOfContents headings={headings} />
+			{ headings && (<TableOfContents headings={headings} />) }
 		</div>
 	</div>
 </div>

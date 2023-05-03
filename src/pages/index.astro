@@ -8,7 +8,7 @@ import { Markdown } from '@astropub/md'
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
 // Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
-const data = await getEntryBySlug('data', 'index');
+const data = await getEntryBySlug('data', '0-index');
 console.log({data})
 ---
 

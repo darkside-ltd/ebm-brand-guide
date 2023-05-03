@@ -1,14 +1,35 @@
 ---
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
-// Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
-const data = await getEntryBySlug('data', 'logo');
-// console.log({data})
+// Get all collection data pages
+const allData = await getCollection("data");
 
+function lowerCase(v) {
+    return v.toLowerCase()
+}
 
 export async function getStaticPaths() {
     // Define the colection you are creating pages for
-    const allData = await getCollection("data");
+    const allPosts = await getCollection("data");
+
+    const numberOfPosts = allPosts.length
+
+    return allPosts.map((post, i) => ({ // Map() all posts after sorting
+    params: {
+      slug: post.data.title.toLowerCase(),
+    },
+    props: {
+      dataProp: post,
+      prevPost: // Previous post
+        i + 1 === numberOfPosts // If the current post is the oldest
+          ? { frontmatter: ""}
+          : allPosts[i + 1],
+      nextPost: // Next post
+        i === 0 // If the current post is the newest
+          ? { frontmatter: "" }
+          : allPosts[i - 1],
+    },
+  }))
 
     return allData.map((e) => {
 		// console.log(e.slug)

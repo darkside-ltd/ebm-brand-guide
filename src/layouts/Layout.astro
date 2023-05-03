@@ -114,9 +114,11 @@ const { title, headings } = Astro.props;
 	.content-width{
 		margin:0 auto;
 		max-width: calc(100% - 48px);
-		padding:24px 0;
+		@media(min-width:420px){
+			max-width: calc(100% - 96px);
+		}
 		@media(min-width:1400px){
-			max-width: 1000px;
+			max-width: 900px;
 		}
 	}
 
@@ -137,7 +139,6 @@ const { title, headings } = Astro.props;
 		}
 
 		p, h1, h2, h3, h4, h5, h6, ul, ol, table{
-			padding:0 24px;
 			@media(min-width:420px){
 				font-size:120%
 			}

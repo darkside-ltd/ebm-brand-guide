@@ -26,8 +26,8 @@ function buildToc(headings) {
   if(headings && headings.length > 1) toc = buildToc(headings)
 ---
 
-<nav class="toc">
-    <ul>
+<nav class="toc lg:text-right">
+    <ul class="inline-block text-left" role="list">
         {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
     </ul>
 </nav>

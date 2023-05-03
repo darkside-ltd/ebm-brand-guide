@@ -101,16 +101,23 @@ const { title, headings } = Astro.props;
 	}
 	body{
 		background: var(--bg-body);
-		color: var(--text-color)
+		color: var(--text-color);
 	}
 	.bg-1 {background-color: var(--color-bg-1);}
 	.bg-2 {background-color: var(--color-bg-2);}
 	.bg-3 {background-color: var(--color-bg-3);}
 
+	a {
+		text-decoration: underline;
+	}
+
 	.content-width{
 		margin:0 auto;
-		max-width:1000px;
+		max-width: calc(100% - 48px);
 		padding:24px 0;
+		@media(min-width:1400px){
+			max-width: 1000px;
+		}
 	}
 
 	.content {

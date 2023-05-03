@@ -8,8 +8,10 @@ function buildToc(headings) {
     const toc = [];
     const parentHeadings = new Map();
 
-    headings.forEach((h) => {
-      const heading = { ...h, subheadings: [] };
+    headings.forEach((h, index) => {
+      console.log({index})
+      const heading = { ...h, subheadings: [], index };
+      heading.index = index + 1;
       parentHeadings.set(heading.depth, heading);
       // Change 2 to 1 if your markdown includes your <h1>
       if (heading.depth === 2) {
@@ -28,6 +30,9 @@ function buildToc(headings) {
 
 <nav class="toc lg:text-right">
     <ul class="inline-block text-left" role="list">
-        {toc.map((heading) => <TableOfContentsHeading heading={heading} />)}
+        {toc.map((heading) => { 
+          // console.log({heading})
+          return <TableOfContentsHeading heading={heading}/> 
+          })}
     </ul>
 </nav>

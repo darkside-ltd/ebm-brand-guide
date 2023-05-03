@@ -1,14 +1,32 @@
 ---
 const { heading } = Astro.props;
 const href = "#" + heading.slug
+console.log({heading})
+
+const number = function(h) {
+    const i = h.index
+    if(i < 10) return "0" + i.toString();
+    return i
+}
 ---
 
 <li>
-	<a href={href}>{heading.text}</a>
+	<a href={href}><span class="number">{number(heading)}</span><span class="text">{heading.text}</span></a>
 </li>
 
 <style>
-	a {
-        text-decoration: underline !important;
+    a {
+        display:flex;
+        gap:1rem;
+        padding:8px;
+    }
+    a:hover{
+        color: var(--color-primary);
+    }
+    .text {
+        text-decoration: underline!important;
+    }
+	.number {
+        font-variant-numeric: tabular-nums;
     }
 </style>

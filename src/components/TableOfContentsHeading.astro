@@ -1,0 +1,8 @@
+---
+const { heading } = Astro.props;
+const href = "#" + heading.slug
+---
+
+<li>
+	<a href={href}>{heading.text}</a>
+</li>

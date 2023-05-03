@@ -1,15 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Hero from '../components/Hero.astro';
-import SideNav from '../components/SideNav.vue';
-import { Markdown } from '@astropub/md'
-
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
 // Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
 const data = await getEntryBySlug('data', 'logo');
-console.log({data})
+// console.log({data})
 
 
 export async function getStaticPaths() {
@@ -17,7 +11,7 @@ export async function getStaticPaths() {
     const allData = await getCollection("data");
 
     return allData.map((e) => {
-		console.log(e.slug)
+		// console.log(e.slug)
         return {
             params: { slug: e.slug },
             props: { dataProp: e },
@@ -30,24 +24,4 @@ const {dataProp} = Astro.props as {dataProp: CollectionEntry<"data">};
 const {Content} = await dataProp.render();
 ---
 
-<Layout title="Every Body Moves Brand Guide">
-	<main>
-		<SideNav client:visible>
-			<Hero title={dataProp.data.title} intro={dataProp.data.intro}/>
-			<div class="content content-width"><Content /></div>
-		</SideNav>
-		
-		<!-- <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-		</ul> -->
-	</main>
-</Layout>
+<Content />

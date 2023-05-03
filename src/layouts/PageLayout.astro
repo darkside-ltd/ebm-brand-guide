@@ -1,0 +1,21 @@
+---
+import Layout from './Layout.astro'
+import Hero from '../components/Hero.astro';
+import SideNav from '../components/SideNav.vue';
+
+const { frontmatter, headings } = Astro.props;
+
+console.log({frontmatter})
+console.log({headings})
+---
+
+<Layout title="Every Body Moves Brand Guide">
+	<main>
+		<SideNav client:visible>
+			<Hero title={frontmatter?.title} intro={frontmatter?.intro} headings={headings}/>
+			<div class="content content-width">
+                <slot />
+            </div>
+		</SideNav>
+	</main>
+</Layout>

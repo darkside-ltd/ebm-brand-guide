@@ -1,42 +1,52 @@
 ---
 import logo from '../assets/logo/Primary.svg';
+import TableOfContents from './TableOfContents.astro';
 
-const { title, intro } = Astro.props;
+const { title, intro, headings } = Astro.props;
 ---
 
 <div class="hero bg-3">
-	<!-- <img src={logo.src} width={logo.width} height={logo.height} alt={import.meta.env.BRAND_NAME} /> -->
-	<div class="content-width">
+	<div class="content-width content-align">
 		<h1>{title}</h1>
-		<p>{intro}</p>
+		<div class="grid lg:grid-cols-2 gap-6">
+			<p>{intro}</p>
+			<TableOfContents headings={headings} />
+		</div>
 	</div>
 </div>
 
 <style lang="scss">
-.hero{
-	width:100%;
-	padding: 24px;
-
-	img{
-		width: 100px
+	.content-align{
+		padding:0 24px;
 	}
-}
+.hero {
+	width:100%;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 
-@media(min-width:420px){
-	.hero{
-		padding: 8rem;
+	@media(min-width:420px){
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
 
-		img {
+	img {
+		width: 100px;
+
+		@media(min-width:420px){
 			width:200px;
 		}
 	}
-}
 
-.hero h1 {
-	font-size: 2.4rem;
-	font-weight: 900;
-	@media(min-width:420px) {
-		font-size: 4rem;
+	h1 {
+		font-size: 2.4rem;
+		font-weight: 900;
+		@media(min-width:420px) {
+			font-size: 4rem;
+		}
+	}
+
+	a {
+		text-decoration: underline;
 	}
 }
 </style>

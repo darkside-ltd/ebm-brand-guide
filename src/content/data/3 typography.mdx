@@ -3,14 +3,21 @@ title: Typography
 url: typography
 intro: Typefaces and styles used for the text in your brand's materials, from headlines to body copy, to create a consistent look and feel.
 ---
-import { Image } from '@astrojs/image/components';
+import Imag from '../../components/Imag.astro';
 import ImageFrame from '../../components/ImageFrame.astro';
 import Type from '../../components/Type.astro';
-import localImage from "../../assets/atkinson.svg";
+import img1 from "../../assets/atkinson.svg";
+import img2 from "../../assets/type1.jpg";
+import img3 from "../../assets/type2.jpg";
+import img4 from "../../assets/type3.jpg";
+import img5 from "../../assets/type4.jpg";
+import img6 from "../../assets/type5.jpg";
 
-<Image src={localImage} alt="Some alt text" />
+<Imag src={img1} alt="Some alt text" />
 
-Atkinson Hyperlegible, named after the founder of the Braille Institute, J. Robert Atkinson, was developed specifically to increase legibility for readers with low vision, and to improve comprehension.
+## Atkinson Hyperlegible
+
+Named after the founder of the Braille Institute, J. Robert Atkinson, was developed specifically to increase legibility for readers with low vision, and to improve comprehension.
 
 Having a traditional grotesque sans-serif at its core, it departs from tradition to incorporate unambiguous, distinctive elements—and at times, unexpected forms—always with the goal of increasing character recognition and ultimately improve reading.
 
@@ -23,3 +30,85 @@ Having a traditional grotesque sans-serif at its core, it departs from tradition
 
 [https://brailleinstitute.org/freefont](https://brailleinstitute.org/freefont) <br/>
 [https://fonts.google.com/specimen/Atkinson+Hyperlegible](https://fonts.google.com/specimen/Atkinson+Hyperlegible)
+
+<div class="spacer"></div>
+
+## Typeface features
+
+For Low vision readers – certain letters and numbers can be hard to distinguish from one another. Atkinson Hyperlegible differentiates common misinterpreted letters and numbers using various design techniques:
+
+<div class="frame full-width">
+    <Imag src={img2} alt="Type sample 1." format="jpg" />
+</div>
+
+
+
+### Recognisable Footprints 
+
+Character boundaries clearly defined, ensuring understanding across the visual-ability spectrum.
+
+### Differentiated letterforms
+
+Similar letter pairs are differentiated from each other to dramatically increase legibility.
+
+<div class="frame full-width">
+    <Imag src={img3} alt="Type sample 2." format="jpg" />
+</div>
+
+
+
+### Unambiguous Characters
+
+Designed to increase legibility and distinction.
+
+<div class="frame full-width">
+    <Imag src={img4} alt="Type sample 3." format="jpg" />
+</div>
+
+
+### Exaggerated forms
+Shaping of letters is exaggerated to provide better clarity.
+
+<div class="frame full-width">
+    <Imag src={img5} alt="Type sample 4." format="jpg" />
+</div>
+
+
+### Opened Counterspace
+Open areas of certain letters are expanded to provide greater distinction.
+
+<div class="frame full-width">
+    <Imag src={img6} alt="Type sample 5." format="jpg" />
+</div>
+
+### Angled spurs and differentiated tails
+Increase recognition and define distinctive style.
+
+
+### Circular Details
+Links to the history of Braille Institute and braille dots.
+
+
+## Hierarchy
+
+We use an WCAG compliant base size of 16px == 1em and the Major Third (1.250) to scale type.
+
+While this hierarchy is intended to bring harmony to vertical rhythm in the typographic design. The rules are best applied when working with long-form written content. And often aren’t required for marketing materials.
+
+Accessibility over aesthetics.
+
+## Layouts
+Here you can see how our hierarchy is used. It’s clearly legible digitally and in print. And it will be used for both display headings and body text.
+
+
+
+### Line Height
+Display Headings: 1em to 1.2em.
+Paragraphs: 1.4 to 1.68em.
+
+
+## Web Implementation
+
+To provide the best possible experience when using our website our primary font should be set to load optionally. And we provide a series of fallback fonts to honour user preference when custom fonts may have been set at the browser or operating system level. 
+
+`font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, Helvetica Neue, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;`

@@ -3,13 +3,26 @@ title: Imagery
 url: imagery
 intro: This section outlines the types of images and visual styles that represent your brand and convey its message, from photography to illustrations, to ensure that your brand's visuals are consistent and effective.
 ---
+import Imag from '../../components/Imag.astro';
+import img1 from "../../assets/photos.jpg";
+import img2 from "../../assets/photo2.jpg";
 
-# Logo
+## Photography
 
-This Markdown file creates a page at `your-domain.com/page-1/`
+Photography should always be genuine. Be that people or activities. Ideally we want to convey movement and or community to our demographic. Some motion blur or out of focus elements are okay because movement isn’t staged, it’s messy and real.
 
-It probably isn't styled much, but Markdown does support:
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+<div class="frame">
+    <Imag src={img1} alt="Examples of photograpy style." aspectRatio="247:100" format="jpg" width={1200}/>
+</div>
+
+## Image Overlay
+
+When using the full colour logos, the background shapes must be used. 
+
+Overlays for the images become optional as the logo itself has sufficient contrast to meet accessibility standards.
+
+We prefer the primary logo over the alternative, and for it to be left aligned over the image. The standard logo clear space rules apply here.
+
+<div class="frame">
+    <Imag src={img2} alt="Examples of overlay style." aspectRatio="178:100" format="jpg" width={1200}/>
+</div>

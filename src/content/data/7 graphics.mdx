@@ -3,13 +3,46 @@ title: Graphics
 url: graphics
 intro: This section defines the style and usage guidelines for the brand's icons, ensuring that they are clear, easily recognizable, and consistent with the brand's overall visual identity.
 ---
+import Imag from '../../components/Imag.astro';
+import img1 from "../../assets/icons.svg";
+import img2 from "../../assets/pattern-backgrounds.jpg";
+import img3 from "../../assets/image-patterns.jpg";
 
-# Logo
+## Icons
 
-This Markdown file creates a page at `your-domain.com/page-1/`
+Icons by themselves are inaccessible as they convey no consistent meaning. When used in isolation or haphazardly can cause confusion for users.
 
-It probably isn't styled much, but Markdown does support:
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+We treat icons as a purely decorative element to draw attention to key call to action buttons, or to add character to an otherwise boring design.
+
+Duo tone icons add more visual context to icons without over complicating them. That way they still work well when used with a single accent colour.
+
+<div class="frame">
+    <Imag src={img1} alt="Sample of the Phosphor icon set." aspectRatio="120:100" format="svg" width={1200}/>
+</div>
+
+The open source phosphor icon project has more than 6000 icons, and an active community.
+
+### Download the Icons
+https://phosphoricons.com/ <br/>
+https://github.com/phosphor-icons/web
+
+
+## Backgrounds
+
+Primarily for use outside of the context of digital space.
+
+Patterned backgrounds can be used in applications such as physical products, apparel and banners.
+
+It’s important to choose colours that are close tints or shades to prevent visual processing problems for our audience.
+
+<div class="frame">
+    <Imag src={img2} alt="Sample of pattern backgrounds." aspectRatio="135:100" format="jpg" width={1200}/>
+</div>
+
+## Image Decoration
+
+To bring the “purple dot” and active shapes into the designs, we’re providing three examples. The first example uses the new primary brand colour, while the second example has been colour picked from the content to better complement the content. The third applies a halftone gradient as on overlay passthrough.
+
+<div class="frame">
+    <Imag src={img3} alt="Sample of image patterns." aspectRatio="237:100" format="jpg" width={1200}/>
+</div>

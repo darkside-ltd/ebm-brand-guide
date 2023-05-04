@@ -1,7 +1,7 @@
 ---
 // import simpleColorConverter from 'simple-color-converter';
 // import { convert } from 'color-convert';
-// import pant from 'nearest-pantone';
+import pant from 'nearest-pantone';
 // import { html, pantone, ral } from 'color_library';
 
 
@@ -27,8 +27,7 @@ async function getPantone(v) {
     // })
     // console.log({cmyk})
 
-    // return pant.getClosestColor(v)
-    return null
+    return pant.getClosestColor(v)
 }
 
 const pantoneColor = await getPantone(data?.hex?.value) 

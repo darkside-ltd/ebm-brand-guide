@@ -1,6 +1,6 @@
 
 <script setup>
-import { getCollection } from 'astro:content';
+// import { getCollection } from 'astro:content';
 import { ref } from 'vue'
 import {
   Dialog,
@@ -26,34 +26,34 @@ import {
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
 
-    const allPosts = await getCollection("data");
-    const navigation = allPosts.map((post, i) => {
+    // const allPosts = await getCollection("data");
+    // const navigation = allPosts.map((post, i) => {
 
-    const title = post.data.title
-    let href = post.data.title.toLowerCase()
-    if(href === "intro") href=""
-    href = "/" + href
-    // console.log({href})
-    return {
-      name: title,
-      href: href,
-      icon: null,
-      current: false
-    }
+    // const title = post.data.title
+    // let href = post.data.title.toLowerCase()
+    // if(href === "intro") href=""
+    // href = "/" + href
+    // // console.log({href})
+    // return {
+    //   name: title,
+    //   href: href,
+    //   icon: null,
+    //   current: false
+    // }
 
-    });
+    // });
 
-// const navigation = [
-//   { name: 'Intro', href: '/', icon: null, current: false },
-//   { name: 'Strategy', href: '/strategy', icon: null, current: false },
-//   { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
-//   { name: 'Typography', href: '/typography', icon: null, current: false },
-//   { name: 'Logo', href: '/logo', icon: null, current: false },
-//   { name: 'Colour', href: '/colour', icon: null, current: false },
-//   { name: 'Imagery', href: '/imagery', icon: null, current: false },
-//   { name: 'Icons', href: '/icons', icon: null, current: false },
-//   { name: 'Patterns', href: '/patterns', icon: null, current: false },
-// ]
+const navigation = [
+  { name: 'Intro', href: '/', icon: null, current: false },
+  { name: 'Strategy', href: '/strategy', icon: null, current: false },
+  { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
+  { name: 'Typography', href: '/typography', icon: null, current: false },
+  { name: 'Logo', href: '/logo', icon: null, current: false },
+  { name: 'Colour', href: '/colour', icon: null, current: false },
+  { name: 'Imagery', href: '/imagery', icon: null, current: false },
+  { name: 'Icons', href: '/icons', icon: null, current: false },
+  { name: 'Patterns', href: '/patterns', icon: null, current: false },
+]
 
 
 

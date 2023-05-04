@@ -1,5 +1,6 @@
 ---
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
+import Layout from '../layouts/PageLayout.astro'
 
 // Get all collection data pages
 const allData = await getCollection("data");
@@ -14,22 +15,35 @@ export async function getStaticPaths() {
 
     const numberOfPosts = allPosts.length
 
-    return allPosts.map((post, i) => ({ // Map() all posts after sorting
-    params: {
-      slug: post.data.title.toLowerCase(),
-    },
-    props: {
-      dataProp: post,
-      prevPost: // Previous post
-        i + 1 === numberOfPosts // If the current post is the oldest
-          ? { frontmatter: ""}
-          : allPosts[i + 1],
-      nextPost: // Next post
-        i === 0 // If the current post is the newest
-          ? { frontmatter: "" }
-          : allPosts[i - 1],
-    },
-  }))
+    return allPosts.map((post, i) => {
+
+      let postObj = post
+
+      // console.log({postObj})
+
+      let slug = post.data.url
+      // if(slug === "index") slug = "/index.html"
+      // console.log({slug})
+
+      const nextPost = i + 1 === numberOfPosts 
+              ? { frontmatter: ""} // If the current post is the oldest
+              : allPosts[i + 1];
+
+      const prevPost = i === 0 
+              ? { frontmatter: "" } // If the current post is the newest
+              : allPosts[i - 1]
+
+      return { // Map() all posts after sorting
+        params: {
+          slug,
+        },
+        props: {
+          dataProp: postObj,
+          prevPost,
+          nextPost,
+        },
+    }
+})
 
     return allData.map((e) => {
 		// console.log(e.slug)
@@ -41,8 +55,9 @@ export async function getStaticPaths() {
 }
 
 // Access the props in this component 
-const {dataProp} = Astro.props as {dataProp: CollectionEntry<"data">};
-const {Content} = await dataProp.render();
+const { dataProp, prevPost, nextPost } = Astro.props;
+const { Content, headings } = await dataProp.render();
 ---
-
-<Content />
+<Layout post={dataProp} prevPost={prevPost} nextPost={nextPost} headings={headings}>
+  <Content />
+</Layout>

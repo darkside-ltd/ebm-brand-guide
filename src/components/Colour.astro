@@ -1,0 +1,57 @@
+---
+import simpleColorConverter from 'simple-color-converter';
+// import { convert } from 'color-convert';
+import pant from 'nearest-pantone';
+import { html, pantone, ral } from 'color_library';
+
+
+
+const { name, hex } = Astro.props;
+
+
+
+const colour = hex
+const url = "https://www.thecolorapi.com/id?hex=" + colour
+const response = await fetch(url);
+const data = await response.json();
+// const result = data.results[0];
+console.log({data})
+
+async function getPantone(v) {
+    console.log({v})
+    
+
+    // let cmyk = new simpleColorConverter({
+    //     color: v, 
+    //     to: 'cmyk'
+    // })
+    // console.log({cmyk})
+
+    return pant.getClosestColor(v)
+}
+
+const pantoneColor = await getPantone(data?.hex?.value) 
+
+console.log({pantoneColor})
+
+
+
+
+---
+
+<div class="colour">
+    <div class="block-colour" style=`color: ${data.contrast.value}; background-color:${data.hex.value}`>
+        {name}<br>
+        HEX {data.hex.value}<br>
+        RGB {data.rgb.value}<br>
+        CMYK {data.cmyk.value}<br>
+        {pantoneColor && ( `Pantone ${pantoneColor?.pantone}` )}
+    </div>
+</div>
+
+<style lang="scss">
+.block-colour {
+padding:1em;
+padding-top:4em;
+}
+</style>

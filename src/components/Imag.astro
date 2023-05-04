@@ -1,0 +1,5 @@
+---
+import { Image } from '@astrojs/image/components';
+const { src, alt, aspectRatio, format, width, height } = Astro.props;
+---
+<Image {src} {alt} {aspectRatio} {format} {width} {height} />

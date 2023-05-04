@@ -3,20 +3,26 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
 import SideNav from '../components/SideNav.vue';
-import { Markdown } from '@astropub/md'
+import { Markdown } from '@astropub/md';
+import Nav from '../components/Nav.astro';
 
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
 // Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
 const data = await getEntryBySlug('data', '0-index');
-console.log({data})
+// console.log({data})
+const allPosts = await getCollection("data");
+const nextPost = allPosts[1];
+import VideoHero from '../components/VideoHero.astro';
+import localImage from "../assets/logo/Primary.svg";
 ---
 
 <Layout title="Every Body Moves Brand Guide">
-	<main>
-		<SideNav client:visible>
-			<!-- <Hero title="Hi"/> -->
-			<div class="content content-width"><Markdown of={data?.body} /></div>
-		</SideNav>
-	</main>
+	<SideNav client:visible>
+		<VideoHero src={localImage} alt="Some alt text" />
+		<div class="content content-width">
+			<Markdown of={data?.body} />
+		</div>
+		<Nav nextPost={nextPost} />
+	</SideNav>
 </Layout>

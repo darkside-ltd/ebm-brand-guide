@@ -92,9 +92,12 @@ const { title, headings } = Astro.props;
 	--color-bg-1: var(--purple--800);
 	--color-bg-2: var(--greyscale--40--light--purple);
 	--color-bg-3: var(--greyscale--20--lavender);
+	--color-bg-4: var(--purple--500);
 	--color: var(--purple--900--xiketic);
 	--bg-body: var(--greyscale--10--ghost);
 	--text-color: var(--greyscale--500);
+	--hero-text-color: var(--purple--900--xiketic);
+	--text-color-light: var(--greyscale--10--ghost);
 	}
 	html{
 		background: var(--bg-body);
@@ -106,13 +109,16 @@ const { title, headings } = Astro.props;
 	.bg-1 {background-color: var(--color-bg-1);}
 	.bg-2 {background-color: var(--color-bg-2);}
 	.bg-3 {background-color: var(--color-bg-3);}
+	.bg-4 {background-color: var(--color-bg-4);}
 
 	a {
 		text-decoration: underline;
+		word-break: break-all;
 	}
 
 	.content-width{
 		margin:0 auto;
+		width:100%;
 		max-width: calc(100% - 48px);
 		@media(min-width:420px){
 			max-width: calc(100% - 96px);
@@ -131,6 +137,10 @@ const { title, headings } = Astro.props;
 			padding-bottom:200px;
 		}
 
+		.spacer{
+			height:180px
+		}
+
 		p{
 			line-height: 1.68;
 			max-width: 70ch;
@@ -145,8 +155,11 @@ const { title, headings } = Astro.props;
 			}
 		}
 
-		p + *{
+		p + p{
 			margin-top:16px;
+		}
+		p + *{
+			margin-top:24px;
 		}
 		h1+ *, h2+ *, h3+ *, h4+ *, h5+ *, h6+ *{
 			margin-top:16px;
@@ -167,11 +180,11 @@ const { title, headings } = Astro.props;
 			visibility: hidden;
 		}
 		h1{font-size:2rem}
-		h2{font-size:2rem}
-		h3{font-size:2rem}
-		h4{font-size:2rem}
-		h5{font-size:2rem}
-		h6{font-size:2rem}
+		h2{font-size:1.8rem}
+		h3{font-size:1.6rem}
+		h4{font-size:1.4rem}
+		h5{font-size:1.2rem}
+		h6{font-size:1rem}
 
 		a{
 			text-decoration: underline;
@@ -213,6 +226,11 @@ const { title, headings } = Astro.props;
 			th+th{
 				background: #FEE9E6
 			}
+		}
+
+		.frame {
+			padding: 24px;
+			background-color: white;
 		}
 	}
 </style>

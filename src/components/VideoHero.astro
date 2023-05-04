@@ -1,0 +1,30 @@
+---
+import { Image } from '@astrojs/image/components';
+const { src, alt } = Astro.props;
+import Halftone from '../assets/abstract-halftone.svg'
+---
+
+<div class="full-width bg-4 flex flex-col items-center">
+	<div class="text-left">
+		<Image src={src} alt={alt} width={200} aspectRatio="1:1" />
+		<div class="text mt-8 text-4xl font-bold">Brand Guide</div>
+		<div class="text mt-1 text-xl">Version 1.2 May 2023</div>
+	</div>
+</div>
+
+
+<style lang="scss">
+	.full-width{
+		width:100%;
+		background-image: url('/images/abstract-halftone.svg');
+		background-size: auto 100%;
+		background-position: right;
+		background-repeat: no-repeat;
+		padding:4rem;
+	}
+	.text {
+		// font-size: 3rem;
+		// font-weight: 900;
+		color: var(--text-color-light);
+	}
+</style>

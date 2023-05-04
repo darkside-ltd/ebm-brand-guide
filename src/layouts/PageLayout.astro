@@ -2,19 +2,22 @@
 import Layout from './Layout.astro'
 import Hero from '../components/Hero.astro';
 import SideNav from '../components/SideNav.vue';
+import Nav from '../components/Nav.astro'
 
-const { frontmatter, headings } = Astro.props;
-// console.log({frontmatter})
+const { headings, prevPost, nextPost, post } = Astro.props;
+// console.log({headings})
+// console.log({prevPost})
+// console.log({nextPost})
+// console.log({post})
+const isIndex = post?.id === '0 index.mdx'
 ---
 
 <Layout title="Every Body Moves Brand Guide">
-	<main>
-		<SideNav client:visible>
-			<Hero title={frontmatter?.title} intro={frontmatter?.intro} headings={headings}/>
-			<div class="content content-width">
-                <slot />
-            </div> 
-			<!-- <Nav frontmatter={frontmatter} /> -->
-		</SideNav>
-	</main>
+	<SideNav client:visible>
+		{!isIndex && (<Hero title={post?.data?.title} intro={post?.data?.intro} headings={headings}/>)}
+		<div class="content content-width">
+			<slot />
+		</div>
+		<Nav prevPost={prevPost} nextPost={nextPost} />
+	</SideNav>
 </Layout>

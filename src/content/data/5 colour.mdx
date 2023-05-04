@@ -1,17 +1,91 @@
 ---
-layout: ../../layouts/PageLayout.astro
 title: Colour
+url: colour
 intro: The colour palette and guidelines for the brand's visual identity, ensuring that all colors used in the brand's materials are consistent and reflect the brand's values.
 ---
+import Colour from '../../components/Colour.astro';
+import { Image } from '@astrojs/image/components';
+import accentUse from "../../assets/accent-use.png";
+import Imag from '../../components/Imag.astro';
 
-This Markdown file creates a page at `your-domain.com/page-1/`
+Our primary purple pays tribute to the disabled community’s colour of choice. And it expands on the tints and shades available allowing us to subtly inject our primary brand colour into lighter and darker elements. A vibrant accent colour is used to provide interest for decorative elements to an otherwise monochromatic colour scheme.
 
-It probably isn't styled much, but Markdown does support:
-- **bold** and _italics._
-- lists
-- [links](https://astro.build)
-- and more!
+## Palette
 
-## Dark Mode
+<Colour hex="1A1423" name="Xiketic" />
+<Colour hex="5A16CA" name="Primary Purple" />
+<Colour hex="B6B8EF" name="Secondary Purple" />
+<Colour hex="ECECFD" name="Lavender" />
+<Colour hex="FAF9FE" name="Ghost" />
+<Colour hex="99E880" name="Accent" />
 
-## Dark Mode 2
+
+## Tints and Shades
+
+Primary colours have tints and shades through either end of the spectrum and are designed to be used a base colours for background and foreground elements.
+
+**60-30-10**
+
+To bring the balance into the design, the colours should be combined in the proportion of 60%–30%–10%. 
+
+The biggest part should go to the primary hue, the third of the composition takes secondary colour and 10% percent goes to the colour which helps to make the accents.
+
+### Purple
+
+<Colour hex="F4EAFE" name="" />
+<Colour hex="E3CBFC" name="" />
+<Colour hex="D1ADF9" name="" />
+<Colour hex="BE8FF6" name="" />
+<Colour hex="A76EF2" name="" />
+<Colour hex="8C4BEE" name="" />
+<Colour hex="732BEA" name="" />
+<Colour hex="5A16CA" name="Primary Purple" />
+<Colour hex="49179B" name="" />
+<Colour hex="3D088C" name="" />
+<Colour hex="330E6F" name="" />
+<Colour hex="291152" name="" />
+<Colour hex="201338" name="" />
+<Colour hex="1A1423" name="Xiketic" />
+
+
+### Greyscale
+
+<Colour hex="FAF9FE" name="Ghost" />
+<Colour hex="ECECFD" name="Lavender" />
+<Colour hex="D1D1F9" name="Lighter Purple" />
+<Colour hex="B6B8EF" name="Light Purple" />
+<Colour hex="9FA0D0" name="" />
+<Colour hex="8788AF" name="" />
+<Colour hex="6F6F8F" name="" />
+<Colour hex="5C5D76" name="" />
+<Colour hex="49495D" name="Independence" />
+<Colour hex="3A3A49" name="" />
+
+### Accent
+
+<Colour hex="F4FDF0" name="" />
+<Colour hex="D8F6CB" name="" />
+<Colour hex="99E880" name="Accent Green" />
+<Colour hex="82CF6B" name="" />
+<Colour hex="73B45E" name="" />
+<Colour hex="629851" name="" />
+<Colour hex="527D44" name="" />
+<Colour hex="456839" name="" />
+
+## Accent Colour Use
+
+Example use cases for the accent colour.
+
+**Breaking the Rules**
+
+While the accent colour is designed to be used for decorative elements. The tints and shades provided are designed to provide flexibility to maintain accessibility standards.
+
+If for some reason you wanted to use the accent colour where the primary colour is normally used, you still have the palette you need.
+
+<div class="frame">
+    <Imag src={accentUse} alt="Examples of accent colour use." aspectRatio="1:1" format="png" width={1180} height={526}/>
+</div>
+
+## Toyota Red
+
+<Colour hex="FF0022" name="Toyota Red" />

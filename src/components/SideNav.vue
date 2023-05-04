@@ -33,7 +33,7 @@ import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
     let href = post.data.title.toLowerCase()
     if(href === "intro") href=""
     href = "/" + href
-    console.log({href})
+    // console.log({href})
     return {
       name: title,
       href: href,
@@ -96,7 +96,7 @@ const sidebarOpen = ref(false)
                 </div>
               </TransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
-              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-1 px-6 pb-4">
+              <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-4 px-6 pb-4">
                 <div class="flex h-16 shrink-0 items-center">
                   <img class="h-8 w-auto" :src="logo.src" :alt="logo.alt" />
                 </div>
@@ -136,7 +136,7 @@ const sidebarOpen = ref(false)
     <!-- Static sidebar for desktop -->
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
       <!-- Sidebar component, swap this element with another sidebar if you like -->
-      <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-1 px-6 pb-4">
+      <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-4 px-6 pb-4">
         <div class="flex flex-col py-6 shrink-0 items-start justify-center">
           <img class="h-24 w-auto" :src="logo.src" :alt="logo.alt" />
         </div>
@@ -222,10 +222,16 @@ const sidebarOpen = ref(false)
       </div>
 
       <main class="">
-        <div class="">
           <slot></slot>
-        </div>
       </main>
     </div>
   </div>
 </template>
+
+<style scoped>
+main{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+</style>

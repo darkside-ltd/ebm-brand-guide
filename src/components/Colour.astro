@@ -1,5 +1,5 @@
 ---
-import simpleColorConverter from 'simple-color-converter';
+// import simpleColorConverter from 'simple-color-converter';
 // import { convert } from 'color-convert';
 import pant from 'nearest-pantone';
 import { html, pantone, ral } from 'color_library';
@@ -15,10 +15,10 @@ const url = "https://www.thecolorapi.com/id?hex=" + colour
 const response = await fetch(url);
 const data = await response.json();
 // const result = data.results[0];
-console.log({data})
+// console.log({data})
 
 async function getPantone(v) {
-    console.log({v})
+    // console.log({v})
     
 
     // let cmyk = new simpleColorConverter({
@@ -32,7 +32,7 @@ async function getPantone(v) {
 
 const pantoneColor = await getPantone(data?.hex?.value) 
 
-console.log({pantoneColor})
+// console.log({pantoneColor})
 
 
 

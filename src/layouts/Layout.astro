@@ -98,6 +98,12 @@ const { title, headings } = Astro.props;
 	--text-color: var(--greyscale--500);
 	--hero-text-color: var(--purple--900--xiketic);
 	--text-color-light: var(--greyscale--10--ghost);
+
+	--table-border-color: var(--greyscale--20--lavender);
+	--table-header-bg-color: var(--greyscale--30--lighter--purple);
+	--table-header-text-color: var(--text-color);
+	--table-header-danger-bg-color:var(--greyscale--400--independence);
+	--table-header-danger-text-color: var(--greyscale--20--lavender);
 	}
 	html{
 		background: var(--bg-body);
@@ -162,23 +168,26 @@ const { title, headings } = Astro.props;
 			margin-top:24px;
 		}
 		h1+ *, h2+ *, h3+ *, h4+ *, h5+ *, h6+ *{
-			margin-top:16px;
+			margin-top:1rem;
 		}
 		* + h1, * + h2, * + h3, * + h4, * + h5, * + h6{
-			margin-top:3em;
+			margin-top:2em;
 		}
+
 
 		h1, h2, h3, h4, h5, h6{
 			font-weight:700;
 			line-height: 1.2;
 		}
-		[id]::before {
+
+		h2[id]::before {
 			content: '';
 			display: block;
 			height:      80px;
 			margin-top: -80px;
 			visibility: hidden;
 		}
+
 		h1{font-size:2rem}
 		h2{font-size:1.8rem}
 		h3{font-size:1.6rem}
@@ -204,7 +213,6 @@ const { title, headings } = Astro.props;
 
 		.do-not-table{
 			overflow-x:auto;
-			padding: 0 24px;
 
 			table{
 				max-width: 1000px;
@@ -215,16 +223,20 @@ const { title, headings } = Astro.props;
 				
 			}
 			tbody tr{
-				border-bottom: 2px solid var(--greyscale--20--lavender);
+				border-bottom: 2px solid var(--table-border-color);
 			}
 			th,td{
 				padding:12px 16px;
 			}
 			th{
 				background: #EAEDF7;
+				background-color: var(--table-header-bg-color);
+				color: var(--table-header-text-color);
 			}
 			th+th{
-				background: #FEE9E6
+				background: #FEE9E6;
+				background-color: var(--table-header-danger-bg-color);
+				color: var(--table-header-danger-text-color);
 			}
 		}
 
@@ -249,6 +261,11 @@ const { title, headings } = Astro.props;
 			img{
 				display: inline-block;
 			}
+		}
+
+		pre {
+			padding:24px;
+			border-radius: 8px;
 		}
 
 	}

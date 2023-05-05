@@ -52,6 +52,7 @@ const navigation = [
   { name: '✅ Colour', href: '/colour', icon: null, current: false },
   { name: '✅ Imagery', href: '/imagery', icon: null, current: false },
   { name: '✅ Graphics', href: '/graphics', icon: null, current: false },
+  { name: 'Social', href: '/social', icon: null, current: false },
   { name: '✅ Application', href: '/application', icon: null, current: false },
 ]
 
@@ -86,8 +87,8 @@ const sidebarOpen = ref(false)
               </TransitionChild>
               <!-- Sidebar component, swap this element with another sidebar if you like -->
               <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-4 px-6 pb-4">
-                <div class="flex flex-col py-6 shrink-0 items-start justify-center">
-                 <a href="/"><img class="h-24 w-auto" :src="logo.src" alt="Every Body Moves" /></a>
+                <div class="flex flex-col py-16 shrink-0 items-start justify-center">
+                 <!-- <a href="/"><img class="h-24 w-auto" :src="logo.src" alt="Every Body Moves" /></a> -->
                 </div>
                 
                 <nav class="flex flex-1 flex-col">

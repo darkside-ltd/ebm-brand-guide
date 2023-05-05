@@ -4,6 +4,8 @@ url: colour
 intro: The colour palette and guidelines for the brand's visual identity, ensuring that all colors used in the brand's materials are consistent and reflect the brand's values.
 ---
 import Colour from '../../components/Colour.astro';
+import ColourContrast from '../../components/ColourContrast.astro';
+import colours from '../../assets/colours.json'
 import { Image } from '@astrojs/image/components';
 import accentUse from "../../assets/accent-use.png";
 import Imag from '../../components/Imag.astro';
@@ -72,6 +74,57 @@ The biggest part should go to the primary hue, the third of the composition take
 <Colour hex="527D44" name="" />
 <Colour hex="456839" name="" />
 
+### Toyota Red
+
+<Colour hex="FF0022" name="Toyota Red" />
+
+
+## WCAG Compliance
+
+We use colour in ways defined in [WCAG 2.1](https://www.w3.org/TR/WCAG21/) to level AA. The following points are not exhaustive, but provide a baseline expectation with any branded materials, digital or physical.
+
+### Colour is not used to convey information alone
+
+> Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.
+
+https://www.w3.org/TR/WCAG21/#use-of-color
+
+### Contrast (Minimum)
+
+The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:
+
+**Large Text**
+Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;
+
+**Incidental**
+Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.
+
+**Logotypes**
+Text that is part of a logo or brand name has no contrast requirement.
+
+https://www.w3.org/TR/WCAG21/#contrast-minimum
+
+
+### Non-text Contrast
+
+The visual presentation of the following have a contrast ratio of at least 3:1 against adjacent color(s):
+
+**User Interface Components**
+Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the user agent and not modified by the author;
+
+**Graphical Objects**
+Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.
+
+https://www.w3.org/TR/WCAG21/#non-text-contrast
+
+
+{/*
+## Contrast Safe Colour Combinations
+<ColourContrast colours={colours} />
+*/}
+
+
+
 ## Accent Colour Use
 
 Example use cases for the accent colour.
@@ -86,6 +139,5 @@ If for some reason you wanted to use the accent colour where the primary colour 
     <Imag src={accentUse} alt="Examples of accent colour use." format="png" width={1180} height={526}/>
 </div>
 
-## Toyota Red
 
-<Colour hex="FF0022" name="Toyota Red" />
+

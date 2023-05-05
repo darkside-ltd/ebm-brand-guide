@@ -17,12 +17,8 @@ import VideoHero from '../components/VideoHero.astro';
 import localImage from "../assets/logo/Primary.svg";
 ---
 
-<Layout title="Every Body Moves Brand Guide">
+<Layout title="Every Body Moves — Digital Brand Guide">
 	<SideNav client:visible>
 		<VideoHero src={localImage} alt="Some alt text" />
-		<div class="content content-width">
-			<Markdown of={data?.body} />
-		</div>
-		<Nav nextPost={nextPost} />
 	</SideNav>
 </Layout>

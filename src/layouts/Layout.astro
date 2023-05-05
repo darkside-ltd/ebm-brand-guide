@@ -1,5 +1,5 @@
 ---
-const { title, headings } = Astro.props;
+const { title, metaDesc } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,6 +16,7 @@ const { title, headings } = Astro.props;
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="theme-color" content="#ffffff">
+		<meta name="description" content={metaDesc}>
 		<title>{title}</title>
 	</head>
 	<body class="h-full">

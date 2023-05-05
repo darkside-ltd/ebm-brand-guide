@@ -10,9 +10,14 @@ const { headings, prevPost, nextPost, post } = Astro.props;
 // console.log({nextPost})
 // console.log({post})
 const isIndex = post?.id === '0 index.mdx'
+
+let title = post?.data?.title + " — Every Body Moves"
+console.log({title})
+
+let metaDesc = post?.data?.intro
 ---
 
-<Layout title="Every Body Moves Brand Guide">
+<Layout title={title} metaDesc={metaDesc}>
 	<SideNav client:visible>
 		{!isIndex && (<Hero title={post?.data?.title} intro={post?.data?.intro} headings={headings}/>)}
 		<div class="content content-width">

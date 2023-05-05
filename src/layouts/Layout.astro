@@ -113,10 +113,7 @@ const { title, metaDesc } = Astro.props;
 		background: var(--bg-body);
 		color: var(--text-color);
 	}
-	.bg-1 {background-color: var(--color-bg-1);}
-	.bg-2 {background-color: var(--color-bg-2);}
-	.bg-3 {background-color: var(--color-bg-3);}
-	.bg-4 {background-color: var(--color-bg-4);}
+	
 
 	a {
 		text-decoration: underline;
@@ -247,6 +244,10 @@ const { title, metaDesc } = Astro.props;
 			background-color: white;
 			text-align: center;
 
+			&.spaced{
+				padding: 80px;
+			}
+
 			@media(max-width:1024px){
 				margin-top: 32px;
 				padding: 32px 24px;
@@ -257,6 +258,9 @@ const { title, metaDesc } = Astro.props;
 				right: 50%;
 				margin-left: -50vw;
 				margin-right: -50vw;
+					&.spaced{
+					padding: 48px;
+				}
 			}
 
 			img{
@@ -269,5 +273,12 @@ const { title, metaDesc } = Astro.props;
 			border-radius: 8px;
 		}
 
+
+		
+
 	}
+	.bg-1 {background-color: var(--color-bg-1) !important;}
+	.bg-2 {background-color: var(--color-bg-2) !important;}
+	.bg-3 {background-color: var(--color-bg-3) !important;}
+	.bg-4 {background-color: var(--color-bg-4) !important;}
 </style>

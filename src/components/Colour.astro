@@ -1,14 +1,7 @@
 ---
-// import simpleColorConverter from 'simple-color-converter';
-// import { convert } from 'color-convert';
 import pant from 'nearest-pantone';
-// import { html, pantone, ral } from 'color_library';
 
-
-
-const { name, hex } = Astro.props;
-
-
+const { name, hex, pantone } = Astro.props;
 
 const colour = hex
 const url = "https://www.thecolorapi.com/id?hex=" + colour
@@ -19,33 +12,35 @@ const data = await response.json();
 
 async function getPantone(v) {
     // console.log({v})
-    
-
-    // let cmyk = new simpleColorConverter({
-    //     color: v, 
-    //     to: 'cmyk'
-    // })
-    // console.log({cmyk})
-
     return pant.getClosestColor(v)
 }
-
 const pantoneColor = await getPantone(data?.hex?.value) 
+let pantoneValue  = pantoneColor?.pantone
+// Pantone Override
+if(pantone) pantoneValue = pantone
 
-// console.log({pantoneColor})
+let cmyk = data.cmyk.value
+cmyk = cmyk.replace('cmyk','')
+cmyk = cmyk.replace('(','')
+cmyk = cmyk.replace(')','')
 
-
-
+let rgb = data.rgb.value
+rgb = rgb.replace('rgb','')
+rgb = rgb.replace('(','')
+rgb = rgb.replace(')','')
 
 ---
 
 <div class="colour">
     <div class="block-colour" style=`color: ${data.contrast.value}; background-color:${data.hex.value}`>
         {name}<br>
-        HEX {data.hex.value}<br>
-        RGB {data.rgb.value}<br>
-        CMYK {data.cmyk.value}<br>
-        {pantoneColor && ( `Pantone ${pantoneColor?.pantone}` )}
+
+        <div class="colour-values">
+            <div>HEX</div><div class="value">{data.hex.value}</div>
+            <div>RGB</div><div class="value">{rgb}</div>
+            <div>CMYK</div><div class="value">{cmyk}</div>
+            {pantoneValue && ( <div>Pantone</div><div class="value">{pantoneValue}</div> )}
+        </div>
     </div>
 </div>
 
@@ -53,5 +48,13 @@ const pantoneColor = await getPantone(data?.hex?.value)
 .block-colour {
 padding:1em;
 padding-top:4em;
+}
+
+.colour-values{
+    display:inline-grid;
+    grid-template-columns: 1fr 1fr;
+    .value {
+        font-variant-numeric: tabular-nums;
+    }
 }
 </style>

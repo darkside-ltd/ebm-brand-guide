@@ -44,15 +44,15 @@ import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
     // });
 
 const navigation = [
-  { name: 'Home', href: '/', icon: null, current: false },
+  { name: '✅ Home', href: '/', icon: null, current: false },
   { name: 'Strategy', href: '/strategy', icon: null, current: false },
-  { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
-  { name: 'Typography', href: '/typography', icon: null, current: false },
-  { name: 'Logo', href: '/logo', icon: null, current: false },
-  { name: 'Colour', href: '/colour', icon: null, current: false },
-  { name: 'Imagery', href: '/imagery', icon: null, current: false },
-  { name: 'Graphics', href: '/graphics', icon: null, current: false },
-  { name: 'Application', href: '/application', icon: null, current: false },
+  { name: '✅ Accessibility', href: '/accessibility', icon: null, current: false },
+  { name: '✅ Typography', href: '/typography', icon: null, current: false },
+  { name: '✅ Logo', href: '/logo', icon: null, current: false },
+  { name: '✅ Colour', href: '/colour', icon: null, current: false },
+  { name: '✅ Imagery', href: '/imagery', icon: null, current: false },
+  { name: '✅ Graphics', href: '/graphics', icon: null, current: false },
+  { name: '✅ Application', href: '/application', icon: null, current: false },
 ]
 
 

@@ -15,11 +15,11 @@ Our primary purple pays tribute to the disabled community’s colour of choice. 
 ## Palette
 
 <Colour hex="1A1423" name="Xiketic" />
-<Colour hex="5A16CA" name="Primary Purple" />
-<Colour hex="B6B8EF" name="Secondary Purple" />
-<Colour hex="ECECFD" name="Lavender" />
-<Colour hex="FAF9FE" name="Ghost" />
-<Colour hex="99E880" name="Accent" />
+<Colour hex="5A16CA" name="Primary Purple" pantone="Violet C"/>
+<Colour hex="B6B8EF" name="Light Purple" pantone="270 C"/>
+<Colour hex="ECECFD" name="Lavender" pantone="7443 C"/>
+<Colour hex="FAF9FE" name="Ghost" pantone="White"/>
+<Colour hex="99E880" name="Accent" pantone="7487 C" />
 
 
 ## Tints and Shades
@@ -41,7 +41,7 @@ The biggest part should go to the primary hue, the third of the composition take
 <Colour hex="A76EF2" name="" />
 <Colour hex="8C4BEE" name="" />
 <Colour hex="732BEA" name="" />
-<Colour hex="5A16CA" name="Primary Purple" />
+<Colour hex="5A16CA" name="Primary Purple" pantone="Violet C"/>
 <Colour hex="49179B" name="" />
 <Colour hex="3D088C" name="" />
 <Colour hex="330E6F" name="" />
@@ -55,7 +55,7 @@ The biggest part should go to the primary hue, the third of the composition take
 <Colour hex="FAF9FE" name="Ghost" />
 <Colour hex="ECECFD" name="Lavender" />
 <Colour hex="D1D1F9" name="Lighter Purple" />
-<Colour hex="B6B8EF" name="Light Purple" />
+<Colour hex="B6B8EF" name="Light Purple" pantone="270 C"/>
 <Colour hex="9FA0D0" name="" />
 <Colour hex="8788AF" name="" />
 <Colour hex="6F6F8F" name="" />
@@ -139,5 +139,91 @@ If for some reason you wanted to use the accent colour where the primary colour 
     <Imag src={accentUse} alt="Examples of accent colour use." format="png" width={1180} height={526}/>
 </div>
 
+## Colour Code Blocks
 
+### CSS Variables
+
+``` css
+/* Color styles */
+--toyota--red: #FF0022;
+--greyscale---ghost: #FAF9FE;
+--greyscale---lavender: #ECECFD;
+--greyscale---lighter--purple: #D1D1F9;
+--greyscale---light--purple: #B6B8EF;
+--greyscale--9-f-a0-d0: #9FA0D0;
+--greyscale--8788-a-f: #8788AF;
+--greyscale--6-f6-f8-f: #6F6F8F;
+--greyscale--5-c5-d76: #5C5D76;
+--greyscale---independence: #49495D;
+--greyscale--3-a3-a49: #3A3A49;
+--green--10: #F4FDF0;
+--green--20: #D8F6CB;
+--green--30--accent--green: #99E880;
+--green--40: #82CF6B;
+--green--50: #73B45E;
+--green--629851: #629851;
+--green--527-d44: #527D44;
+--green--456839: #456839;
+--purple--10: #F4EAFE;
+--purple--20: #E3CBFC;
+--purple--30: #D1ADF9;
+--purple--40: #BE8FF6;
+--purple--50: #A76EF2;
+--purple--100: #8C4BEE;
+--purple--200: #732BEA;
+--purple--300--primary--purple: #5A16CA;
+--purple--400: #49179B;
+--purple--500: #3D088C;
+--purple--600: #330E6F;
+--purple--700: #291152;
+--purple--800: #201338;
+--purple--900--xiketic: #1A1423;
+
+```
+
+### JSON
+
+``` json
+{
+  "Toyota Red": "#ff0022",
+  "Greyscale": {
+    "Ghost": "#faf9fe",
+    "Lavender": "#ececfd",
+    "Lighter Purple": "#d1d1f9",
+    "Light Purple": "#b6b8ef",
+    "#9FA0D0": "#9fa0d0",
+    "#8788AF": "#8788af",
+    "#6F6F8F": "#6f6f8f",
+    "#5C5D76": "#5c5d76",
+    "Independence": "#49495d",
+    "#3A3A49": "#3a3a49"
+  },
+  "Green": {
+    "10": "#f4fdf0",
+    "20": "#d8f6cb",
+    "40": "#82cf6b",
+    "50": "#73b45e",
+    "30 Accent Green": "#99e880",
+    "#629851": "#629851",
+    "#527D44": "#527d44",
+    "#456839": "#456839"
+  },
+  "Purple": {
+    "10": "#f4eafe",
+    "20": "#e3cbfc",
+    "30": "#d1adf9",
+    "40": "#be8ff6",
+    "50": "#a76ef2",
+    "100": "#8c4bee",
+    "200": "#732bea",
+    "400": "#49179b",
+    "500": "#3d088c",
+    "600": "#330e6f",
+    "700": "#291152",
+    "800": "#201338",
+    "300 Primary Purple": "#5a16ca",
+    "900 Xiketic": "#1a1423"
+  }
+}
+```
 

@@ -166,7 +166,7 @@ const sidebarOpen = ref(false)
           <div class="flex items-center gap-x-4 lg:gap-x-6">
 
             <div class="flex">
-          <a href="/"><img class="h-8 w-auto" :src="logoHorizontal.src" alt="Every Body Moves" /></a>
+          <a href="/"><img class="h-8 w-auto" :src="logoHorizontal.src" alt="Every Body Moves" :width="logoHorizontal.width" :height="logoHorizontal.height"/></a>
         </div>
 
             <!-- <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">

@@ -9,10 +9,10 @@ import Nav from '../components/Nav.astro';
 import { getCollection, getEntryBySlug, CollectionEntry } from 'astro:content';
 
 // Get a single entry from a collection. Requires the name of the collection and the entry's slug as arguments.
-const data = await getEntryBySlug('data', '0-index');
+// const data = await getEntryBySlug('data', '0-index');
 // console.log({data})
 const allPosts = await getCollection("data");
-const nextPost = allPosts[1];
+const nextPost = allPosts[0];
 import VideoHero from '../components/VideoHero.astro';
 import localImage from "../assets/logo/Primary.svg";
 ---
@@ -20,5 +20,6 @@ import localImage from "../assets/logo/Primary.svg";
 <Layout title="Every Body Moves — Digital Brand Guide" metaDesc="The Digital Brand Guide for Every Body Moves Powered by Toyota. Discover Inclusive Local Opportunities to Become More Active.">
 	<SideNav client:visible>
 		<VideoHero src={localImage} alt="Some alt text" />
+		<Nav nextPost={nextPost} />
 	</SideNav>
 </Layout>

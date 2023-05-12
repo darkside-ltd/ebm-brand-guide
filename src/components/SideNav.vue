@@ -52,8 +52,8 @@ const navigation = [
   { name: '✅ Colour', href: '/colour', icon: null, current: false },
   { name: '✅ Imagery', href: '/imagery', icon: null, current: false },
   { name: '✅ Graphics', href: '/graphics', icon: null, current: false },
-  { name: 'Social', href: '/social', icon: null, current: false },
   { name: '✅ Application', href: '/application', icon: null, current: false },
+  { name: 'Social', href: '/social', icon: null, current: false },
 ]
 
 

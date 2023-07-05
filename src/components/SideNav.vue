@@ -25,36 +25,7 @@ import {
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/vue/20/solid'
-
-    // const allPosts = await getCollection("data");
-    // const navigation = allPosts.map((post, i) => {
-
-    // const title = post.data.title
-    // let href = post.data.title.toLowerCase()
-    // if(href === "intro") href=""
-    // href = "/" + href
-    // // console.log({href})
-    // return {
-    //   name: title,
-    //   href: href,
-    //   icon: null,
-    //   current: false
-    // }
-
-    // });
-
-const navigation = [
-  { name: 'Home', href: '/', icon: null, current: false },
-  { name: 'Strategy', href: '/strategy', icon: null, current: false },
-  { name: 'Accessibility', href: '/accessibility', icon: null, current: false },
-  { name: 'Typography', href: '/typography', icon: null, current: false },
-  { name: 'Logo', href: '/logo', icon: null, current: false },
-  { name: 'Colour', href: '/colour', icon: null, current: false },
-  { name: 'Imagery', href: '/imagery', icon: null, current: false },
-  { name: 'Graphics', href: '/graphics', icon: null, current: false },
-  { name: 'Application', href: '/application', icon: null, current: false },
-  { name: 'Social', href: '/social', icon: null, current: false },
-]
+import navigation from '../navigation.json';
 
 
 import logoAsset from '../assets/logo/Primary.svg';

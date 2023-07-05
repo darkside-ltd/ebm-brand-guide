@@ -1,12 +1,13 @@
 {
-  "name": "",
+  "name": "Every Body Moves",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "gen:navigation": "node generateNavigation.js",
+    "dev": "npm run gen:navigation && astro dev",
+    "start": "npm run gen:navigation && astro dev",
+    "build": "npm run gen:navigation && astro build",
+    "preview": "npm run gen:navigation && astro preview",
     "astro": "astro"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "@astrojs/ts-plugin": "^1.0.0",
     "@astrojs/vue": "^2.1.1",
     "@astropub/md": "^0.2.0",
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "@headlessui/react": "^1.7.14",
     "@headlessui/vue": "^1.7.13",
     "@heroicons/react": "^2.0.17",

@@ -155,7 +155,10 @@ const { title, metaDesc } = Astro.props;
 
 		p, h1, h2, h3, h4, h5, h6, ul, ol, table{
 			@media(min-width:420px){
-				font-size:120%
+				font-size:120%;
+				p {
+					font-size:100%
+				}
 			}
 		}
 
@@ -176,6 +179,14 @@ const { title, metaDesc } = Astro.props;
 		h1, h2, h3, h4, h5, h6{
 			font-weight:700;
 			line-height: 1.2;
+		}
+
+		* + h2{
+			margin-top:120px;
+
+			@media(min-width:420px){
+				margin-top:200px;
+			}
 		}
 
 		h2[id]::before {

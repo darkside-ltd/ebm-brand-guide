@@ -18,6 +18,12 @@
     "current": false
   },
   {
+    "name": "Archetype",
+    "href": "/archetype",
+    "icon": null,
+    "current": false
+  },
+  {
     "name": "Accessibility",
     "href": "/accessibility",
     "icon": null,

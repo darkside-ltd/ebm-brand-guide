@@ -9,14 +9,17 @@ const { title, metaDesc } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-		<link rel="icon" href="/favicon.ico" sizes="any">
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-		<link rel="manifest" href="/site.webmanifest">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="description" content={metaDesc}>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#ffffff" />
+		<meta name="description" content={metaDesc} />
 		<title>{title}</title>
 	</head>
 	<body class="h-full">
@@ -26,118 +29,122 @@ const { title, metaDesc } = Astro.props;
 <style is:global lang="scss">
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #f6f6f6;
 	}
 	* {
 		box-sizing: border-box;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 
 	:root {
-		--typeface-primary: 'Atkinson Hyperlegible';
+		--typeface-primary: "Atkinson Hyperlegible";
 	}
 	body {
-		font-family: var(--typeface-primary), -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+		font-family: var(--typeface-primary), -apple-system, BlinkMacSystemFont,
+			Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+			Helvetica Neue, sans-serif;
 	}
 
 	:root {
+		--toyota--red: #ff0022;
 
-	--toyota--red: #FF0022;
+		--greyscale--10--ghost: #faf9fe;
+		--greyscale--20--lavender: #ececfd;
+		--greyscale--30--lighter--purple: #d1d1f9;
+		--greyscale--40--light--purple: #b6b8ef;
+		--greyscale--50: #9fa0d0;
+		--greyscale--100: #8788af;
+		--greyscale--200: #6f6f8f;
+		--greyscale--300: #5c5d76;
+		--greyscale--400--independence: #49495d;
+		--greyscale--500: #3a3a49;
 
-	--greyscale--10--ghost: #FAF9FE;
-	--greyscale--20--lavender: #ECECFD;
-	--greyscale--30--lighter--purple: #D1D1F9;
-	--greyscale--40--light--purple: #B6B8EF;
-	--greyscale--50: #9FA0D0;
-	--greyscale--100: #8788AF;
-	--greyscale--200: #6F6F8F;
-	--greyscale--300: #5C5D76;
-	--greyscale--400--independence: #49495D;
-	--greyscale--500: #3A3A49;
+		--green--10: #f4fdf0;
+		--green--20: #d8f6cb;
+		--green--30--accent--green: #99e880;
+		--green--40: #82cf6b;
+		--green--50: #73b45e;
+		--green--100: #629851;
+		--green--200: #527d44;
+		--green--300: #456839;
 
-	--green--10: #F4FDF0;
-	--green--20: #D8F6CB;
-	--green--30--accent--green: #99E880;
-	--green--40: #82CF6B;
-	--green--50: #73B45E;
-	--green--100: #629851;
-	--green--200: #527D44;
-	--green--300: #456839;
+		--purple--10: #f4eafe;
+		--purple--20: #e3cbfc;
+		--purple--30: #d1adf9;
+		--purple--40: #be8ff6;
+		--purple--50: #a76ef2;
+		--purple--100: #8c4bee;
+		--purple--200: #732bea;
+		--purple--300--primary--purple: #5a16ca;
+		--purple--400: #49179b;
+		--purple--500: #3d088c;
+		--purple--600: #330e6f;
+		--purple--700: #291152;
+		--purple--800: #201338;
+		--purple--900--xiketic: #1a1423;
 
-	--purple--10: #F4EAFE;
-	--purple--20: #E3CBFC;
-	--purple--30: #D1ADF9;
-	--purple--40: #BE8FF6;
-	--purple--50: #A76EF2;
-	--purple--100: #8C4BEE;
-	--purple--200: #732BEA;
-	--purple--300--primary--purple: #5A16CA;
-	--purple--400: #49179B;
-	--purple--500: #3D088C;
-	--purple--600: #330E6F;
-	--purple--700: #291152;
-	--purple--800: #201338;
-	--purple--900--xiketic: #1A1423;
+		// Set variables
+		--color-primary: var(--purple--300--primary--purple);
+		--color-theme: var(--color-primary);
+		--color-bg-1: var(--purple--800);
+		--color-bg-2: var(--greyscale--40--light--purple);
+		--color-bg-3: var(--greyscale--20--lavender);
+		--color-bg-4: var(--purple--500);
+		--color: var(--purple--900--xiketic);
+		--bg-body: var(--greyscale--10--ghost);
+		--text-color: var(--greyscale--500);
+		--hero-text-color: var(--purple--900--xiketic);
+		--text-color-light: var(--greyscale--10--ghost);
 
-
-	// Set variables
-	--color-primary: var(--purple--300--primary--purple);
-	--color-theme: var(--color-primary);
-	--color-bg-1: var(--purple--800);
-	--color-bg-2: var(--greyscale--40--light--purple);
-	--color-bg-3: var(--greyscale--20--lavender);
-	--color-bg-4: var(--purple--500);
-	--color: var(--purple--900--xiketic);
-	--bg-body: var(--greyscale--10--ghost);
-	--text-color: var(--greyscale--500);
-	--hero-text-color: var(--purple--900--xiketic);
-	--text-color-light: var(--greyscale--10--ghost);
-
-	--table-border-color: var(--greyscale--20--lavender);
-	--table-header-bg-color: var(--greyscale--30--lighter--purple);
-	--table-header-text-color: var(--text-color);
-	--table-header-danger-bg-color:var(--greyscale--400--independence);
-	--table-header-danger-text-color: var(--greyscale--20--lavender);
+		--table-border-color: var(--greyscale--20--lavender);
+		--table-header-bg-color: var(--greyscale--30--lighter--purple);
+		--table-header-text-color: var(--text-color);
+		--table-header-danger-bg-color: var(--greyscale--400--independence);
+		--table-header-danger-text-color: var(--greyscale--20--lavender);
 	}
-	html{
+	html {
 		background: var(--bg-body);
 	}
-	body{
+	body {
 		background: var(--bg-body);
 		color: var(--text-color);
 	}
 
-
-	.content-width{
-		margin:0 auto;
-		width:100%;
+	.content-width {
+		margin: 0 auto;
+		width: 100%;
 		max-width: calc(100% - 48px);
-		@media(min-width:420px){
+		@media (min-width: 420px) {
 			max-width: calc(100% - 96px);
 		}
-		@media(min-width:1400px){
+		@media (min-width: 1400px) {
 			max-width: 900px;
 		}
 	}
 
 	.content {
-		padding-top:80px;
-		padding-bottom:80px;
+		padding-top: 80px;
+		padding-bottom: 80px;
 
-		@media(min-width:420px){
-			padding-top:120px;
-			padding-bottom:200px;
+		@media (min-width: 420px) {
+			padding-top: 120px;
+			padding-bottom: 200px;
 		}
 
-		.spacer{
-			height:180px
+		.spacer {
+			height: 180px;
 		}
 
 		a {
@@ -145,105 +152,142 @@ const { title, metaDesc } = Astro.props;
 			word-break: break-all;
 		}
 
-		p{
+		p {
 			line-height: 1.68;
 			max-width: 70ch;
 		}
-		*+p{
-			margin-top:24px
+		* + p {
+			margin-top: 24px;
 		}
 
-		p, h1, h2, h3, h4, h5, h6, ul, ol, table{
-			@media(min-width:420px){
-				font-size:120%;
+		p,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		ul,
+		ol,
+		table {
+			@media (min-width: 420px) {
+				font-size: 120%;
 				p {
-					font-size:100%
+					font-size: 100%;
 				}
 			}
 		}
 
-		p + p{
-			margin-top:16px;
+		p + p {
+			margin-top: 16px;
 		}
-		p + *{
-			margin-top:24px;
+		p + * {
+			margin-top: 24px;
 		}
-		h1+ *, h2+ *, h3+ *, h4+ *, h5+ *, h6+ *{
-			margin-top:1rem;
+		h1 + *,
+		h2 + *,
+		h3 + *,
+		h4 + *,
+		h5 + *,
+		h6 + * {
+			margin-top: 1rem;
 		}
-		* + h1, * + h2, * + h3, * + h4, * + h5, * + h6{
-			margin-top:2em;
+		* + h1,
+		* + h2,
+		* + h3,
+		* + h4,
+		* + h5,
+		* + h6 {
+			margin-top: 2em;
 		}
 
-
-		h1, h2, h3, h4, h5, h6{
-			font-weight:700;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: 700;
 			line-height: 1.2;
 		}
 
-		* + h2{
-			margin-top:120px;
+		* + h2 {
+			margin-top: 120px;
 
-			@media(min-width:420px){
-				margin-top:200px;
+			@media (min-width: 420px) {
+				margin-top: 200px;
 			}
 		}
 
 		h2[id]::before {
-			content: '';
+			content: "";
 			display: block;
-			height:      80px;
+			height: 80px;
 			margin-top: -80px;
 			visibility: hidden;
 		}
 
-		h1{font-size:2rem}
-		h2{font-size:1.8rem}
-		h3{font-size:1.6rem}
-		h4{font-size:1.4rem}
-		h5{font-size:1.2rem}
-		h6{font-size:1rem}
+		h1 {
+			font-size: 2rem;
+		}
+		h2 {
+			font-size: 1.8rem;
+		}
+		h3 {
+			font-size: 1.6rem;
+		}
+		h4 {
+			font-size: 1.4rem;
+		}
+		h5 {
+			font-size: 1.2rem;
+		}
+		h6 {
+			font-size: 1rem;
+		}
 
-		a{
+		a {
 			text-decoration: underline;
 		}
 
-		ul{
-			list-style:disc;
-			margin-left:1em;
+		ul {
+			list-style: disc;
+			margin-left: 1em;
 		}
 		ul ul {
 			font-size: inherit;
 		}
 
-		li + li, li ul, li ol {
-			margin-top:.5em;
+		li + li,
+		li ul,
+		li ol {
+			margin-top: 0.5em;
 		}
 
-		.do-not-table{
-			overflow-x:auto;
+		.do-not-table {
+			overflow-x: auto;
 
-			table{
+			table {
 				max-width: 1000px;
 			}
-			tr{
-				display:grid;
+			tr {
+				display: grid;
 				grid-template-columns: 1fr 1fr;
-				
 			}
-			tbody tr{
+			tbody tr {
 				border-bottom: 2px solid var(--table-border-color);
 			}
-			th,td{
-				padding:12px 16px;
+			th,
+			td {
+				padding: 12px 16px;
 			}
-			th{
-				background: #EAEDF7;
+			th {
+				background: #eaedf7;
 				background-color: var(--table-header-bg-color);
 				color: var(--table-header-text-color);
 			}
-			th+th{
-				background: #FEE9E6;
+			th + th {
+				background: #fee9e6;
 				background-color: var(--table-header-danger-bg-color);
 				color: var(--table-header-danger-text-color);
 			}
@@ -255,11 +299,11 @@ const { title, metaDesc } = Astro.props;
 			background-color: white;
 			text-align: center;
 
-			&.spaced{
+			&.spaced {
 				padding: 80px;
 			}
 
-			@media(max-width:1024px){
+			@media (max-width: 1024px) {
 				margin-top: 32px;
 				padding: 32px 24px;
 				width: 100vw;
@@ -269,27 +313,79 @@ const { title, metaDesc } = Astro.props;
 				right: 50%;
 				margin-left: -50vw;
 				margin-right: -50vw;
-					&.spaced{
+				&.spaced {
 					padding: 48px;
 				}
 			}
 
-			img{
+			img {
 				display: inline-block;
 			}
 		}
 
 		pre {
-			padding:24px;
+			padding: 24px;
 			border-radius: 8px;
 		}
-
-
-		
-
 	}
-	.bg-1 {background-color: var(--color-bg-1) !important;}
-	.bg-2 {background-color: var(--color-bg-2) !important;}
-	.bg-3 {background-color: var(--color-bg-3) !important;}
-	.bg-4 {background-color: var(--color-bg-4) !important;}
+	.bg-1 {
+		background-color: var(--color-bg-1) !important;
+	}
+	.bg-2 {
+		background-color: var(--color-bg-2) !important;
+	}
+	.bg-3 {
+		background-color: var(--color-bg-3) !important;
+	}
+	.bg-4 {
+		background-color: var(--color-bg-4) !important;
+	}
+
+	blockquote {
+		position: relative;
+		margin: 40px 0 !important;
+		padding: 24px 0 24px 24px;
+		background: var(--quote-bg) no-repeat left / var(--quote-image-width);
+
+		color: var(--purple--400, #49179b);
+		font-family: Atkinson Hyperlegible;
+		font-size: 1.4rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.2;
+		border-left: 4px solid var(--greyscale--30--lighter--purple);
+
+		position: relative;
+		padding-left: 32px;
+		@media (min-width: 420px) {
+			padding-left: 40px;
+			margin-left: -24px !important;
+		}
+	}
+
+	blockquote::after {
+		content: "❝";
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px;
+		height: 50px;
+		background: var(--bg-body);
+		border-radius: 999px;
+		display: grid;
+		place-content: center;
+		padding-top: 0.25em;
+		color: var(--accent-color);
+		font-size: 36px;
+		font-style: normal;
+	}
+
+	cite {
+		display: block;
+		margin-top: 4px;
+		text-indent: 0;
+		font-size: 0.9em;
+	}
 </style>

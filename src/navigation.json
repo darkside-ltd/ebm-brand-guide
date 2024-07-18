@@ -70,5 +70,11 @@
     "href": "/social",
     "icon": null,
     "current": false
+  },
+  {
+    "name": "Asset Pack",
+    "href": "/asset-pack",
+    "icon": null,
+    "current": false
   }
 ]
